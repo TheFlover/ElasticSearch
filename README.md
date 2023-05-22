@@ -27,6 +27,14 @@ Executer :
 Si on dépasse 30 min, il faut régénérer le mot de passe de l'Elastic user avec :
 - docker exec -it es-node01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
 
+Allez sur : http://localhost:5601/ depuis le navigateur
+Renseigner l'enrollment token et écrivez les 6 chiffres envoyés dans le docker kib-01
+Si l'enrollment token est expiré, faite :
+- docker exec -it es-01 /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+Utilisez le nouveau enrollment token
+
+Se connecter avec le user/password donné lors du docker run de elesticSearch
+
 # Installation Logstash 
 
 Site :
