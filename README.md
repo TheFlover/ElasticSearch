@@ -35,7 +35,8 @@ KIBANA_PORT=5601
 MEM_LIMIT=4000000000
 
 # Project namespace (defaults to the current folder name if not set)
-#COMPOSE_PROJECT_NAME=myproject```
+#COMPOSE_PROJECT_NAME=myproject
+```
 
 Puis un fichier docker-compose.yml contenant : 
 ```version: "2.2"
@@ -264,7 +265,8 @@ volumes:
   esdata03:
     driver: local
   kibanadata:
-    driver: local```
+    driver: local
+  ```
     
  Pour le lancer, j'ai effectué la commande suivante dans un terminal : 
  `docker-compose up -d` 
