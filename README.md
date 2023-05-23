@@ -7,7 +7,7 @@ Pour régler cela, il fallait désactiver les sécurités docker ou les modifier
 J'ai donc décider de lancer Elastic Search avec un docker-compose pour gérer toute la configuration :
 J'ai créé un fichier .env contenant les variables de configurtion :
 
-`# Password for the 'elastic' user (at least 6 characters)
+```# Password for the 'elastic' user (at least 6 characters)
 ELASTIC_PASSWORD= Florian
 
 # Password for the 'kibana_system' user (at least 6 characters)
@@ -264,11 +264,11 @@ volumes:
   esdata03:
     driver: local
   kibanadata:
-    driver: local`
+    driver: local```
     
- Pour le lancer, j'ai effectué la commande : 
- `docker-compose up -d` dans un terminal
- 
+ Pour le lancer, j'ai effectué la commande suivante dans un terminal : 
+ `docker-compose up -d` 
+  
  Cependant j'ai obtenu l'erreur :
  "scratchpad elasticsearch: [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]"
  
