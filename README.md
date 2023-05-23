@@ -42,3 +42,7 @@ Site :
 
 Executer :
 - docker pull docker.elastic.co/logstash/logstash:8.7.1
+
+# Installation de Kaggle
+
+Se créer un compte sur : https://www.kaggle.com/
