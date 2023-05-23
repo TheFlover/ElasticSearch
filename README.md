@@ -35,10 +35,10 @@ KIBANA_PORT=5601
 MEM_LIMIT=4000000000
 
 # Project namespace (defaults to the current folder name if not set)
-#COMPOSE_PROJECT_NAME=myproject`
+#COMPOSE_PROJECT_NAME=myproject```
 
 Puis un fichier docker-compose.yml contenant : 
-`version: "2.2"
+```version: "2.2"
 
 services:
   setup:
