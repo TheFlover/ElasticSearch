@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ReviewPage = () => {
   const [note, setNote] = useState('');
   const [reviews, setReviews] = useState([]);
+  const [from, setFrom] = useState(0); // Position de départ pour la pagination
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -12,10 +13,26 @@ const ReviewPage = () => {
       const response = await axios.get(`http://localhost:3000/database/${note}`);
       const searchResult = response.data;
       setReviews(searchResult);
+      setFrom(0); // Réinitialiser la position de départ
     } catch (error) {
       console.error('Error occurred during API call:', error);
     }
   };
+
+  const handleLoadMoreReviews = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/database/${note}/additional-reviews?from=${reviews.length}`);
+      const additionalReviews = response.data;
+      setReviews((prevReviews) => [...prevReviews, ...additionalReviews]);
+    } catch (error) {
+      console.error('Error occurred during API call:', error);
+    }
+  };
+
+  useEffect(() => {
+    // Charger les avis initiaux au chargement de la page
+    handleFormSubmit({ preventDefault: () => {} });
+  }, []);
 
   return (
     <div>
@@ -40,6 +57,9 @@ const ReviewPage = () => {
             <p>Comment: {review._source.review_full}</p>
           </div>
         ))}
+        {reviews.length > 0 && (
+          <button onClick={handleLoadMoreReviews}>Load More Reviews</button>
+        )}
       </div>
     </div>
   );
