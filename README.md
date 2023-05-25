@@ -46,3 +46,11 @@ Executer :
 # Installation de Kaggle
 
 Se créer un compte sur : https://www.kaggle.com/
+
+# Questions
+
+## Comment Elasticsearch procède-t-il au mapping ?
+Elasticsearch utilise un processus appelé "mapping" pour définir la structure et le type des données dans un index. Le mapping permet à Elasticsearch de comprendre comment interpréter et traiter les différents champs de données. Lorsque nous indexons des documents, Elasticsearch examine les données et déduit automatiquement le mapping en fonction du contenu. Il analyse les valeurs des champs pour déterminer les types de données appropriés tels que les chaînes de caractères, les nombres ou les dates. Nous pouvons également définir un mapping personnalisé pour spécifier les types de données et les paramètres de traitement des champs.
+
+## Peut-on modifier le mapping sans recréer l'index ?
+Non, il n'est pas possible de modifier directement le mapping sans recréer l'index. Une fois qu'un index est créé avec un certain mapping, il est en lecture seule et ne peut pas être modifié. Pour apporter des modifications de mapping, il est nécessaire de créer un nouvel index avec le mapping souhaité, puis de réindexer les données de l'ancien index vers le nouvel index. Ce processus implique de copier les données de l'index existant vers le nouvel index tout en appliquant le nouveau mapping. Il existe des techniques et des outils tels que l'API Elasticsearch ou des outils de reindexation dédiés pour faciliter ce processus de recréation d'index avec un nouveau mapping.
