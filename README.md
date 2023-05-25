@@ -281,3 +281,7 @@ volumes:
  
  J'ai donc pu lancer le docker-compose et lancer le container.
  Je me suis donc connecté sur http://localhost:5601/ avec le mot de passe renseigné dans le fichier .env et ça fonctionne donc désormais sans problème et de manière propre.
+ 
+# Questions
+ 
+## Tenter d’expliquer comment les données indexées sont analysées :  
