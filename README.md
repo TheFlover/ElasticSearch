@@ -285,3 +285,18 @@ volumes:
 # Questions
  
 ## Tenter d’expliquer comment les données indexées sont analysées :  
+
+Lorsque des données sont indexées dans Elasticsearch, elles sont soumises à un processus d'analyse. L'analyse des données consiste à les diviser en unités plus petites appelées tokens et à les normaliser pour faciliter la recherche et la récupération des informations.
+
+Le processus d'analyse comprend plusieurs étapes :
+
+- Tokenisation : Les données textuelles sont divisées en tokens, qui sont des fragments individuels tels que des mots, des phrases ou des caractères. La tokenisation dépend du type d'analyseur utilisé, qui peut être configuré pour traiter les données selon différentes règles linguistiques et de séparation.
+
+- Normalisation : Les tokens sont normalisés pour uniformiser les variations de casse, de diacritiques et de caractères spéciaux. Par exemple, les mots en majuscules et en minuscules sont convertis en minuscules pour garantir la correspondance indépendamment de la casse. Les accents et les caractères spéciaux peuvent également être normalisés pour faciliter la recherche.
+
+- Filtrage : Les tokens peuvent être filtrés pour éliminer les mots vides (stop words), qui sont des mots courants qui n'apportent pas de valeur de recherche significative, tels que "le", "la", "de", etc. De plus, des filtres peuvent être appliqués pour supprimer les caractères indésirables ou pour effectuer des manipulations spécifiques sur les tokens.
+
+- Indexation : Une fois que les tokens ont été analysés, ils sont indexés dans une structure de données optimisée pour la recherche. L'indexation implique l'association des tokens aux documents correspondants et à leurs autres attributs pertinents.
+
+L'analyse des données indexées dans Elasticsearch est essentielle pour améliorer la pertinence et l'efficacité des recherches. 
+En utilisant des techniques de tokenisation et de normalisation appropriées, Elasticsearch peut offrir des fonctionnalités avancées telles que la recherche de texte intégral, la correspondance approximative et la prise en charge de plusieurs langues.
