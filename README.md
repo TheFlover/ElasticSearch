@@ -54,3 +54,18 @@ Elasticsearch utilise un processus appelé "mapping" pour définir la structure 
 
 ## Peut-on modifier le mapping sans recréer l'index ?
 Non, il n'est pas possible de modifier directement le mapping sans recréer l'index. Une fois qu'un index est créé avec un certain mapping, il est en lecture seule et ne peut pas être modifié. Pour apporter des modifications de mapping, il est nécessaire de créer un nouvel index avec le mapping souhaité, puis de réindexer les données de l'ancien index vers le nouvel index. Ce processus implique de copier les données de l'index existant vers le nouvel index tout en appliquant le nouveau mapping. Il existe des techniques et des outils tels que l'API Elasticsearch ou des outils de reindexation dédiés pour faciliter ce processus de recréation d'index avec un nouveau mapping.
+
+## Tentez de définir : Tokenisation et Normalisation 
+
+### Tokenisation
+
+La tokenisation est le processus de découpage d'un texte en unités discrètes appelées "tokens". Un token représente une unité du texte, telle qu'un mot, une phrase, un symbole ou même un caractère individuel. 
+La tokenisation est une étape importante qui permet de transformer le texte en une séquence structurée de tokens, qui peuvent ensuite être analysés, indexés ou utilisés dans diverses tâches linguistiques telles que la recherche, la classification ou la génération de texte.
+
+### Normalisation
+
+La normalisation est le processus de transformation d'un texte en une forme standardisée ou normalisée afin de réduire les variations et d'assurer une cohérence lors de la comparaison et de la recherche de texte. 
+La normalisation peut inclure plusieurs opérations, telles que la suppression des accents, la mise en minuscules, la suppression des signes de ponctuation, la conversion des nombres en leur forme textuelle, etc. L'objectif de la normalisation est d'obtenir une représentation uniforme du texte, indépendamment des variations liées à la casse, à l'orthographe ou à d'autres différences linguistiques, facilitant ainsi le traitement et l'analyse des données de manière cohérente.
+
+En résumé, la tokenisation consiste à découper un texte en unités discrètes appelées "tokens", tandis que la normalisation vise à transformer le texte en une forme standardisée en appliquant des opérations. 
+Ces deux processus sont utilisés dans le traitement du langage naturel pour préparer et traiter les données textuelles de manière efficace et cohérente.
