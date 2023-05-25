@@ -69,3 +69,17 @@ La normalisation peut inclure plusieurs opérations, telles que la suppression d
 
 En résumé, la tokenisation consiste à découper un texte en unités discrètes appelées "tokens", tandis que la normalisation vise à transformer le texte en une forme standardisée en appliquant des opérations. 
 Ces deux processus sont utilisés dans le traitement du langage naturel pour préparer et traiter les données textuelles de manière efficace et cohérente.
+
+## les APIs importantes mentionnées en cours sonts
+
+### Index APIs (fonctions de gestion des index)
+
+Index APIs sont utilisées pour gérer des index individuels, des paramètres d'index, des alias, des mappages et des modèles d'index et plus simplement de créer, supprimer, consulter, … un index.
+
+### Document APIs (fonctions d’indexation (CRUD de docs))
+
+Document APIs contient une fonction utilisée pour indexer un document.
+
+### Search APIs (fonctions de recherche)
+
+Search APIs sont utilisées pour rechercher et agréger les données stockées dans les index et les flux de données Elasticsearch.
