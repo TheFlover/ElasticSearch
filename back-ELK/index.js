@@ -1,6 +1,5 @@
 const express = require('express');
 const { Client } = require('@elastic/elasticsearch');
-const { tokenizer } = require('@elastic/elasticsearch');
 const cors = require('cors');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
@@ -9,9 +8,6 @@ const client = new Client({
   auth: {
     username: 'elastic',
     password: 'Florian'
-  },
-  customTokenizers: {
-    myTokenizer: tokenizer('standard')
   }
 });
 
@@ -48,7 +44,6 @@ app.get('/database', async function (req, res) {
         match: {
           review_full: {
             query: keyword,
-            analyzer: 'myTokenizer'
           }
         }
       });
